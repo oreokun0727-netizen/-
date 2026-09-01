@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ハロウィン</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=M+PLUS+Rounded+1c:wght@500;700;900&display=swap');
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 40px 12px;
+    background: radial-gradient(circle at 20% 10%, #2a2a6a 0%, #0b0b2e 45%, #060618 100%);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  .poster {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    background: #fffdf7;
+    border-radius: 18px;
+    box-shadow: 0 0 0 6px #0b0b2e, 0 20px 50px rgba(0,0,0,0.6);
+    overflow: hidden;
+    padding: 34px 26px 30px;
+  }
+
+  .poster::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(2px 2px at 15% 20%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(2px 2px at 80% 60%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 60% 15%, rgba(255,255,255,0.4), transparent);
+    pointer-events: none;
+  }
+
+  .bunting {
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 6px;
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: 'Kaisei Decol', serif;
+    font-size: 52px;
+    margin: 6px 0 14px;
+    color: #2d1b52;
+    -webkit-text-stroke: 1.5px #6b3fa0;
+    letter-spacing: 4px;
+  }
+
+  .date {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: #2d1b52;
+    margin: 4px 0;
+  }
+
+  .members {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #2d1b52;
+    margin-bottom: 22px;
+  }
+
+  .card {
+    position: relative;
+    border: 3px solid #a83232;
+    border-radius: 18px;
+    padding: 18px 18px 18px 78px;
+    margin-bottom: 20px;
+    min-height: 90px;
+  }
+
+  .card.blue { border-color: #1e3a6e; }
+  .card.gold { border-color: #c9962f; padding-left: 18px; }
+
+  .badge {
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.2;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  }
+
+  .badge.red { background: #c0392b; }
+  .badge.blue { background: #1e3a6e; }
+  .badge.orange { background: #e08a1e; width: 60px; height: 60px; position: static; transform: none; flex: 0 0 auto; margin-right: 14px; }
+
+  .card ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 18px;
+    color: #2d1b52;
+    line-height: 1.7;
+  }
+
+  .card.blue {
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .meeting-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .meeting-label {
+    flex: 0 0 90px;
+    background: #1e3a6e;
+    color: #fff;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+    margin-right: 14px;
+  }
+
+  .map-embed {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #1e3a6e;
+  }
+
+  .map-embed iframe {
+    display: block;
+    width: 100%;
+    height: 220px;
+    border: 0;
+  }
+
+  .meeting-caption {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+    color: #2d1b52;
+  }
+
+  .card.gold {
+    display: flex;
+    align-items: center;
+  }
+
+  .time-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2d1b52;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .clock {
+    margin-left: auto;
+    font-size: 40px;
+  }
+
+  .footer-note {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 18px;
+  }
+
+  @media (max-width: 420px) {
+    h1 { font-size: 38px; }
+    .card { padding-left: 60px; }
+    .badge { width: 56px; height: 56px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <div class="bunting">🎃 👻 🎃 👻 🎃</div>
+
+  <h1>ハロウィン</h1>
+
+  <div class="date">🦇 2026.10.25 🦇</div>
+  <div class="members">3年3組メンバー</div>
+
+  <div class="card">
+    <div class="badge red">持ち物</div>
+    <ul>
+      <li>おかね（3000円くらい）</li>
+      <li>スマホ</li>
+      <li>ミニ扇風機</li>
+    </ul>
+  </div>
+
+  <div class="card blue">
+    <div class="meeting-row">
+      <div class="meeting-label">待ち合わせ<br>場所</div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!4v1788241944508!6m8!1m7!1sCnafpmZNRN8H0JQCmD7hIQ!2m2!1d34.68992072919046!2d135.2687477737985!3f254.15403762373364!4f-6.602085143611788!5f0.7820865974627469" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+    <div class="meeting-caption">ダイエーのロータリーの近く</div>
+  </div>
+
+  <div class="card gold">
+    <div class="badge orange">集合<br>時間</div>
+    <div class="time-text">🦇 11時00分</div>
+    <div class="clock">🕚</div>
+  </div>
+</div>
+
+</body>
+</html>
